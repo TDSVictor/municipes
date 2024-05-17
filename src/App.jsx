@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import Registrar from './registrar';
+import Visualizar from './visualizar';
+import Editar from './editar';
 
 function Principal() {
-  const [secaoAtual, setSecaoAtual] = useState('municipes');
+  const [secaoAtual, setSecaoAtual] = useState('visualizar');
   const [nome, setNome] = useState('');
   const [rg, setRg] = useState('');
   const [cpf, setCpf] = useState('');
@@ -26,74 +29,44 @@ function Principal() {
         body: JSON.stringify(pessoa)
       });
     } catch (error) {
-
+      console.error("Erro ao registrar pessoa:", error);
     }
   };
 
   return (
     <div className="container">
       <div className="botao-container">
-        <button onClick={() => cliqueSecao('municipes')} className='botao-menu' id="muni">Visualizar</button>
+        <button onClick={() => cliqueSecao('visualizar')} className='botao-menu' id="muni">Visualizar</button>
         <button onClick={() => cliqueSecao('registrar')} className='botao-menu' id="regi">Registrar</button>
-        <button onClick={() => cliqueSecao('excluir')} className='botao-menu' id="exc">Excluir</button>
+        <button onClick={() => cliqueSecao('editar')} className='botao-menu' id="exc">Excluir</button>
       </div>
 
-      <div className="conteudos">
-        {secaoAtual === 'municipes' && (
-          <p>Visualizar Munícipes</p>
-        )}
-
-        {secaoAtual === 'registrar' && (
-          <>
-            <form onSubmit={handleSubmit}>
-
-              <input type="text"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-                placeholder="Nome"
-              />
-
-              <input type="number"
-                value={rg}
-                onChange={(e) => setRg(e.target.value)}
-                placeholder="RG"
-              />
-
-              <input type="number"
-                value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
-                placeholder="CPF"
-              />
-
-              <input type="date"
-                value={nasc}
-                onChange={(e) => setNasc(e.target.value)}
-                placeholder="Data de Nascimento"
-              />
-
-              <input type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-              />
-
-              <input type="tel"
-                value={telefone}
-                onChange={(e) => setTelefone(e.target.value)}
-                placeholder="Telefone"
-              />
-
-              <button type='submit'>Registrar</button>
-            </form>
-          </>
-        )}
-
-        {secaoAtual === 'excluir' && (
-          <p>Excluir Munícipe</p>
-        )}
+      <div className="visualizar">
+          {secaoAtual === 'visualizar' && (
+            <Visualizar />
+          )}
       </div>
+
+          {secaoAtual === 'registrar' && (
+            <Registrar 
+              nome={nome} setNome={setNome}
+              rg={rg} setRg={setRg}
+              cpf={cpf} setCpf={setCpf}
+              nasc={nasc} setNasc={setNasc}
+              email={email} setEmail={setEmail}
+              telefone={telefone} setTelefone={setTelefone}
+              handleSubmit={handleSubmit}
+            />
+          )}
+
+        <div className="editar">
+          {secaoAtual === 'editar' && (
+            <Editar />
+          )}
+        </div>
+
     </div>
-  )
+  );
 }
 
 export default Principal;

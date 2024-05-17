@@ -56,8 +56,34 @@ body{
   color: #ffffff;
 }
 
-.conteudos{
+.visualizar{
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.registrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.registrar input{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  width: 30vh;
+  height: 3vh;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
+
+.registrar button{
+  display: block;
+  justify-content: center;
+  align-items: center;
+
 }

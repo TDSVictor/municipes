@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-const Registrar = ({ nome, setNome, rg, setRg, cpf, setCpf, nasc, setNasc, email, setEmail, telefone, setTelefone, handleSubmit }) => {
+const Registrar = ({ nome, setNome, rg, setRg, cpf, setCpf, nasc, setNasc, email, setEmail, telefone, setTelefone, handleSubmit}) => {
+
   return (
     <div className="registrar">
+      <h3>Registro de Municipes</h3><br/>
       <form onSubmit={handleSubmit}>
 
         <input 
@@ -19,6 +21,7 @@ const Registrar = ({ nome, setNome, rg, setRg, cpf, setCpf, nasc, setNasc, email
           value={rg} 
           onChange={(e) => setRg(e.target.value)} 
           placeholder="RG" 
+          id='rg'
         />
         
         <input 
@@ -48,11 +51,11 @@ const Registrar = ({ nome, setNome, rg, setRg, cpf, setCpf, nasc, setNasc, email
           onChange={(e) => setTelefone(e.target.value)} 
           placeholder="Telefone" 
         />
-
-        
-
+      <div className="container-button-submit">
+        <button type='submit' className='button-submit'>Registrar</button>
+      </div>
       </form>
-      <button type='submit'>Registrar</button>
+
     </div>
   );
 };

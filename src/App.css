@@ -51,23 +51,12 @@ body{
   background-color: #808080;
   color: #ffffff;
 }
-#exc:hover{
-  background-color: #fc0303bd;
-  color: #ffffff;
-}
-
-.visualizar{
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .registrar{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  flex-direction: column;
 }
 
 .registrar input{
@@ -75,15 +64,112 @@ body{
   flex-direction: column;
   margin-top: 30px;
   width: 30vh;
-  height: 3vh;
   border-radius: 10px;
   border: none;
   padding: 10px;
 }
 
-.registrar button{
-  display: block;
+.container-button-submit{
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+}
+
+.button-submit{
+  width: 100px;
+  border: none;
+  color: #000000;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.button-submit:hover{
+  background-color: #008000;
+  color: #ffffff;
+}
+
+.visualizar{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.h2move{
+  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.botao-containervisu{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.botao-pessoa {
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.botao-pessoa:hover {
+  background-color: #808080;
+  transition: background-color .3s ease;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+@media (min-width: 720px) {
+  .container{
+    height: 80vh;
+  }
+  .registrar input{
+    margin-top: 10px;
+  }
+
+
+
+}
+
+@media (min-width: 1080px){
+  .container{
+    height: 70vh;
+  }
+  .registrar input{
+    margin-top: 20px;
+  }
+  .container-button-submit{
+    margin-top: 50px;
+  }
 
 }

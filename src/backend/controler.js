@@ -1,23 +1,23 @@
-import {create, read} from './model.js';
+import connection from './banco.js';
 
-export async function createPessoa(req, res){
-    const {nome, rg, cpf, nasc, email, telefone} = req.body;
-    console.log('Dados recebidos do frontend', {nome, rg, cpf, nasc, email, telefone});
+export const getAllPessoa = (req, res) => {
+  connection.query('SELECT * FROM pessoas', (err, results) => {
+    if (err) {
+      res.status(500).json({ message: err.message });
+      return;
+    }
+    res.json(results);
+  });
+};
 
-    create(nome, rg, cpf, nasc, rg, cpf, email, telefone, (err,result) => {
-        if(err){
-            res.status(500).json({error: err.message});
-        }
-        res.status(201).json({ mensagem: 'Pessoa criado com sucesso'});
-    });
-}
-
-export async function getAllPessoa(req,res){
-    read((err, pessoa) => {
-        if (err){
-            res.status(500).json({error: err.message});
-            return;
-        }
-        res.json(pessoa);
-    });
-}
+export const createPessoa = (req, res) => {
+  const { nome, rg, cpf, nasc, email, telefone } = req.body;
+  const query = 'INSERT INTO pessoas (nome, rg, cpf, nasc, email, telefone) VALUES (?, ?, ?, ?, ?, ?)';
+  connection.query(query, [nome, rg, cpf, nasc, email, telefone], (err, results) => {
+    if (err) {
+      res.status(500).json({ message: err.message });
+      return;
+    }
+    res.status(201).json({ message: 'Pessoa criada com sucesso!' });
+  });
+};

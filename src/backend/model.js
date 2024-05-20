@@ -1,7 +1,7 @@
 import connection from './banco.js';
 
 export function read(callback){
-    connection.query('SELECT * FROM pessoa', callback);
+    connection.query('SELECT * FROM pessoas', callback);
 }
 
 export function create(nome, rg, cpf, nasc, email, telefone){

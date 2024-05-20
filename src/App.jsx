@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Registrar from './registrar';
 import Visualizar from './visualizar';
-import Editar from './editar';
 
 function Principal() {
   const [secaoAtual, setSecaoAtual] = useState('visualizar');
@@ -28,6 +29,17 @@ function Principal() {
         },
         body: JSON.stringify(pessoa)
       });
+      // Limpar os campos de entrada
+      setNome('');
+      setRg('');
+      setCpf('');
+      setNasc('');
+      setEmail('');
+      setTelefone('');
+      // Exibir mensagem de confirmação
+      toast.success('Registro realizado com sucesso!', {
+        position: "top-right"
+      });
     } catch (error) {
       console.error("Erro ao registrar pessoa:", error);
     }
@@ -38,33 +50,28 @@ function Principal() {
       <div className="botao-container">
         <button onClick={() => cliqueSecao('visualizar')} className='botao-menu' id="muni">Visualizar</button>
         <button onClick={() => cliqueSecao('registrar')} className='botao-menu' id="regi">Registrar</button>
-        <button onClick={() => cliqueSecao('editar')} className='botao-menu' id="exc">Excluir</button>
       </div>
 
       <div className="visualizar">
-          {secaoAtual === 'visualizar' && (
-            <Visualizar />
-          )}
+        {secaoAtual === 'visualizar' && (
+          <Visualizar />
+        )}
       </div>
 
-          {secaoAtual === 'registrar' && (
-            <Registrar 
-              nome={nome} setNome={setNome}
-              rg={rg} setRg={setRg}
-              cpf={cpf} setCpf={setCpf}
-              nasc={nasc} setNasc={setNasc}
-              email={email} setEmail={setEmail}
-              telefone={telefone} setTelefone={setTelefone}
-              handleSubmit={handleSubmit}
-            />
-          )}
-
-        <div className="editar">
-          {secaoAtual === 'editar' && (
-            <Editar />
-          )}
+      {secaoAtual === 'registrar' && (
+        <div>
+          <Registrar 
+            nome={nome} setNome={setNome}
+            rg={rg} setRg={setRg}
+            cpf={cpf} setCpf={setCpf}
+            nasc={nasc} setNasc={setNasc}
+            email={email} setEmail={setEmail}
+            telefone={telefone} setTelefone={setTelefone}
+            handleSubmit={handleSubmit}
+          />
+          <ToastContainer />
         </div>
-
+      )}
     </div>
   );
 }

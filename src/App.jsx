@@ -41,6 +41,9 @@ function Principal() {
         position: "top-right"
       });
     } catch (error) {
+      toast.error('Registro não realizado!', {
+        position: "top-right"
+      });
       console.error("Erro ao registrar pessoa:", error);
     }
   };
@@ -54,7 +57,10 @@ function Principal() {
 
       <div className="visualizar">
         {secaoAtual === 'visualizar' && (
+          <>
           <Visualizar />
+          <ToastContainer />
+          </>
         )}
       </div>
 

@@ -106,7 +106,8 @@ body{
   margin-left: 20px;
   justify-content: center;
   align-items: center;
-
+  display: flex;
+  margin-bottom: 15px;
 }
 
 .botao-containervisu{
@@ -141,13 +142,57 @@ label {
 }
 
 input {
-  width: 100%;
+  width: 500px;
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
+  border: none;
 }
 
+.button-voltar-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.button-voltar{
+  width: 100px;
+  border: none;
+  color: #000000;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.button-voltar:hover{
+  background-color: #808080;
+  color: #ffffff;
+}
+
+.button-page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.button-page{
+  width: 200px;
+  border: none;
+  color: #000000;
+  background-color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
 
 @media (min-width: 720px) {
   .container{
@@ -156,9 +201,6 @@ input {
   .registrar input{
     margin-top: 10px;
   }
-
-
-
 }
 
 @media (min-width: 1080px){

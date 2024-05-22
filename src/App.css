@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,24 +14,72 @@ body{
   min-height: 100vh;
 }
 
-.container{
-  width: 70vh;
-  height: 70vh;
+.main-container {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.left-container {
+  width: 30vh;
+  padding: 20px;
+  background-color: transparent;
+  margin-right: 20px;
   justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.left-container h2{
+  text-align: center;
+}
+
+.flag {
+  width: 100;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 2px;
+  height:50vh;
+  background-color: rgba(0,0,0,0.1);
+  margin: auto 20px;
+
+}
+
+.right-container {
+  flex: 1;
   background-color: rgb(231, 225, 225);
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   border-radius: 10px;
+  padding: 20px;
+  width: 70vh;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
 }
 
-.botao-container{
+.creditos {
+  align-self: flex-end;
+  margin-top: 200px;
+}
+
+.creditos a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.botao-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin-top: -20px;
 }
 
-.botao-menu{
+.botao-menu {
   width: 100px;
   border: none;
   color: #000000;
@@ -43,33 +91,35 @@ body{
   transition: background-color .3s ease;
 }
 
-#regi:hover{
+#regi:hover {
   background-color: #008000;
   color: #ffffff;
 }
-#muni:hover{
+
+#muni:hover {
   background-color: #808080;
   color: #ffffff;
 }
 
-.registrar{
+.registrar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
-.registrar input{
+.registrar input {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 30vh;
   border-radius: 10px;
   border: none;
   padding: 10px;
 }
 
-.container-button-submit{
+.container-button-submit {
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -77,7 +127,7 @@ body{
   margin-top: 20px;
 }
 
-.button-submit{
+.button-submit {
   width: 100px;
   border: none;
   color: #000000;
@@ -89,12 +139,12 @@ body{
   transition: background-color .3s ease;
 }
 
-.button-submit:hover{
+.button-submit:hover {
   background-color: #008000;
   color: #ffffff;
 }
 
-.visualizar{
+.visualizar {
   margin-top: 30px;
   display: flex;
   justify-content: center;
@@ -102,7 +152,7 @@ body{
   flex-direction: column;
 }
 
-.h2move{
+.h2move {
   margin-left: 20px;
   justify-content: center;
   align-items: center;
@@ -110,7 +160,7 @@ body{
   margin-bottom: 15px;
 }
 
-.botao-containervisu{
+.botao-containervisu {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
@@ -150,14 +200,14 @@ input {
   border: none;
 }
 
-.button-voltar-container{
+.button-voltar-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.button-voltar{
+.button-voltar {
   width: 100px;
   border: none;
   color: #000000;
@@ -169,12 +219,12 @@ input {
   transition: background-color .3s ease;
 }
 
-.button-voltar:hover{
+.button-voltar:hover {
   background-color: #808080;
   color: #ffffff;
 }
 
-.button-page-container{
+.button-page-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +232,7 @@ input {
   gap: 10px;
 }
 
-.button-page{
+.button-page {
   width: 200px;
   border: none;
   color: #000000;
@@ -192,26 +242,4 @@ input {
   padding: 8px;
   cursor: pointer;
   transition: background-color .3s ease;
-}
-
-@media (min-width: 720px) {
-  .container{
-    height: 80vh;
-  }
-  .registrar input{
-    margin-top: 10px;
-  }
-}
-
-@media (min-width: 1080px){
-  .container{
-    height: 70vh;
-  }
-  .registrar input{
-    margin-top: 20px;
-  }
-  .container-button-submit{
-    margin-top: 50px;
-  }
-
 }

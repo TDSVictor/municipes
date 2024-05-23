@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGithub, FaSearch } from 'react-icons/fa';
 
 function Visualizar() {
   const [pessoas, setPessoas] = useState([]);
@@ -119,7 +120,6 @@ function Visualizar() {
               placeholder="Pesquisar por nome, CPF ou RG"
               className="input-pesquisa"
            />
-
           </div>
         </div>
       )}

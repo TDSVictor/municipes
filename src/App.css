@@ -12,12 +12,15 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #f7f7f7;
 }
 
 .main-container {
   display: flex;
   width: 80%;
   max-width: 1200px;
+  justify-content: center;
+  align-items: center;
 }
 
 .left-container {
@@ -28,6 +31,7 @@ body {
   justify-content: center;
   flex-direction: column;
   text-align: justify;
+  display: block;
 }
 
 .left-container h2{
@@ -50,7 +54,7 @@ body {
 
 .right-container {
   flex: 1;
-  background-color: rgb(231, 225, 225);
+  background-color: #2f5287;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   border-radius: 10px;
   padding: 20px;
@@ -91,7 +95,8 @@ body {
   transition: background-color .3s ease;
 }
 
-#regi:hover {
+#regi:hover,
+#regi.active {
   background-color: #008000;
   color: #ffffff;
 }
@@ -107,6 +112,10 @@ body {
   align-items: center;
   flex-direction: column;
   margin-top: 30px;
+}
+
+.registrar h3{
+  color: #ffffff;
 }
 
 .registrar input {
@@ -152,12 +161,26 @@ body {
   flex-direction: column;
 }
 
+.visualizar h3{
+  color:#ffffff;
+}
+
+.fa-search{
+  display: flex;
+  position: absolute;
+  pointer-events: none;
+}
+
 .h2move {
   margin-left: 20px;
   justify-content: center;
   align-items: center;
   display: flex;
   margin-bottom: 15px;
+}
+
+.h2move h2{
+  color: #ffffff;
 }
 
 .botao-containervisu {
@@ -184,12 +207,14 @@ body {
 
 .form-group {
   margin-bottom: 15px;
+  color: #ffffff;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
 }
+
 
 input {
   width: 500px;

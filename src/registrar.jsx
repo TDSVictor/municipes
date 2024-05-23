@@ -7,8 +7,7 @@ const Registrar = ({ nome, setNome, rg, setRg, cpf, setCpf, nasc, setNasc, email
     <div className="registrar">
       <h3>Registro de Municipes</h3><br/>
       <form onSubmit={handleSubmit}>
-
-        <input 
+        <input
           type="text"
           value={nome} 
           onChange={(e) => setNome(e.target.value)} 

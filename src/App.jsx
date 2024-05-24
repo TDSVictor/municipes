@@ -60,7 +60,7 @@ function Principal() {
       <div className="left-container">
         <img src="logo.png" alt="Brasao do Estado" className="flag" />
         <h2>Sistema de Registros de Municipes</h2><br/>
-        <p>Sistema desenvolvido para modernizar o processo de cadastro de munícipes, evitando duplicidades e aumentando a eficiência.</p>
+        <p>Sistema desenvolvido para modernizar o processo de cadastro de munícipes, evitando duplicidades e aumentando a eficiência dos registros.</p>
         <p className='creditos'>Desenvolvedor <a href='https://github.com/TDSVictor'>Victor Araujo <FaGithub/></a></p>
       </div>
       <div className="divider"></div>

@@ -1,7 +1,7 @@
 # Projeto de Cadastro de municipes para a cidade de Alto Santo
   - Prática do Curso Técnico em Desenvolvimento de Sistemas
 
-![Exemplo](https://imgur.com/luZea25)
+![Exemplo](https://i.imgur.com/luZea25.png)
 
 
 # Utilizações:
